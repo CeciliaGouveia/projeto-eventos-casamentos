@@ -1,0 +1,638 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Updock&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap'); */
+
+:root {
+    --dourado: #936d0d;
+    --branco: #fff;
+    --cinza: rgb(116, 128, 150);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'El Messiri', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 1000px;
+}
+
+/*--------------ESTILIZAÇÃO DO HEADER--------------*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px;
+    z-index: 1000;
+    transition: 0.6s;
+}
+
+header.sticky {
+    padding: 5px 100px;
+    background: var(--branco);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+header .logo {
+    position: relative;
+    font-weight: 700;
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    position: relative;
+    list-style: none;
+}
+
+header ul li a {
+    z-index: 888;
+    position: relative;
+    margin: 0 15px;
+    font-size: 1em;
+    text-decoration: none;
+    color: var(--branco);
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: 0.6s;
+    text-transform: uppercase;
+    text-shadow: 1.2px 1.2px 1.5px rgba(68, 67, 67, 0.67);
+}
+
+header.sticky .logo,
+header.sticky ul li a {
+    color: var(--dourado);
+    text-shadow: 1px 1px 1.4px #706f6cc8;
+}
+
+/*--------------ESTILIZAÇÃO DA CAPA DO SITE------------*/
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url(../assets/bg.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner:before {
+    z-index: 777;
+    content: '';
+    position: absolute;
+    background: rgba(136, 98, 76, 0.3);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.banner h2 {
+    z-index: 888;
+    color: var(--branco);
+    font-size: 10em;
+    text-align: center;
+    line-height: 1em;
+    font-family: 'Ballet', cursive;
+    text-shadow: 1px 1px 1px rgba(10, 10, 10, 0.461);
+}
+
+.banner h2 span {
+    color: #bb8f20;
+    font-family: 'Ballet', cursive;
+    text-shadow: 1px 1px 1px rgba(243, 239, 239, 0.439);
+}
+
+/*------------ESTILIZAÇÃO DAS SEÇÕES PRINCIPAIS DO SITE------------*/
+
+.sec {
+    background: rgba(241, 237, 237, 0.55);
+    padding: 100px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec .content {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.sec .content .mxw800p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sec .content .mxw800p h3 {
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--dourado);
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.sec .content .mxw800p p {
+    position: relative;
+    font-size: 18px;
+    color: var(--cinza);
+    font-weight: 400;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.sec .content .mxw800p .btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    background: var(--dourado);
+    BOX-shadow: 1.5px 1.5px 1px rgba(145, 143, 143, 0.624);
+    text-decoration: none;
+    color: var(--branco);
+    text-transform: capitalize;
+}
+
+/*--------------ESTILIZAÇÃO DOS CARDS DA SEÇÃO 'O QUE FAZEMOS'-------------- */
+
+.sec .services {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+.sec .services .box {
+    width: 300px;
+    margin: 0 auto;
+    background: var(--branco);
+    padding: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.sec .services .box .iconBx {
+    margin-top: 25px;
+}
+
+.sec .services .box .iconBx img {
+    /*Formatação do tamanho das imagens que compõem os cards.*/
+    max-width: 70px;
+    /*Espaçamento entre a imagem e o texto que está dentro do card.*/
+    margin-bottom: 15px;
+}
+
+.sec .services .box .content h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--dourado);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.sec .services .box .content p {
+    color: var(--cinza);
+}
+
+/*--------ESTILIZAÇÃO DA SEÇÃO 'NOSSOS NÚMEROS'-----------*/
+
+.stats {
+    background: #936d0dbd;
+    /*Criação do efeito de uma seção pegar metade do fundo da seção anterior, através das propriedades 'paddin-top' e 'margin-top'. */
+    padding-top: 250px;
+    margin-top: -250px;
+}
+
+.stats .content .mxw800p h3,
+.stats .content .mxw800p p {
+    color: var(--branco);
+}
+
+.stats .content .statsBox {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+.stats .content .statsBox .box h2 {
+    color: var(--branco);
+    font-size: 36px;
+}
+
+.stats .content .statsBox .box h4 {
+    color: var(--branco);
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/*--------------ESTILIZAÇÃO DA SEÇÃO 'EVENTOS RECENTES'--------------*/
+
+.work .content .workBx {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+.work .content .workBx .brand {
+    position: relative;
+    background: var(--dourado);
+    min-height: 300px;
+    width: 250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.work .content .workBx .brand:hover {
+    opacity: 0.5;
+}
+
+.work .content .workBx .brand img {
+    margin: 0px;
+}
+
+.work .content .workBx .brand a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/*Definição de como os links se comportarão quando o mouse estiver passando em cima do card em que ele está*/
+.work .content .workBx .brand:hover a {
+    color: var(--branco);
+}
+
+/*--------------ESTILIZAÇÃO DA SEÇÃO 'A EQUIPE'--------------*/
+
+.sec .teamBx {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+.sec .teamBx .member {
+    position: relative;
+    background: #000;
+    min-height: 300px;
+    width: 250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec .teamBx .member .imgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.sec .teamBx .member .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sec .teamBx .member .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--dourado);
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.sec .teamBx .member .details:hover {
+    opacity: 1;
+}
+
+.sec .teamBx .member .details h2 {
+    color: var(--branco);
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.sec .teamBx .member .details h2 span {
+    display: block;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+/*--------------ESTILIZAÇÃO DA SEÇÃO DE 'ENVIE UMA MENSAGEM'--------------*/
+
+.contact {
+    background: var(--dourado);
+}
+
+.contact .content .mxw800p h3,
+.contact .content .mxw800p p {
+    color: var(--branco);
+}
+
+.contact .content .contactForm {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.contact .content .contactForm form {
+    width: 100%;
+}
+
+.contact .content .contactForm form .row100 {
+    display: flex;
+    width: 100%;
+}
+
+.contact .content .contactForm form .row100 .inputBx50 {
+    width: 50%;
+    margin: 0 20px;
+}
+
+.contact .content .contactForm form .row100 .inputBx100 {
+    width: 100%;
+    margin: 0 20px;
+}
+
+.contact .content .contactForm form .row100 input,
+.contact .content .contactForm form .row100 textarea {
+    position: relative;
+    /* Retirada da borda */
+    border: none;
+    /* Inclusão de borda inferior */
+    border-bottom: 1px solid var(--branco);
+    color: var(--branco);
+    /* Retirada de cor de fundo */
+    background: transparent;
+    width: 100%;
+    padding: 10px 0;
+    outline: none;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 20px 0;
+    resize: none;
+}
+
+.contact .content .contactForm form .row100 textarea {
+    /*Aumento da altura do campo de enviar mensagem, para que o usuário consiga escrever melhor a mensagem.*/
+    height: 100px;
+}
+
+/* Estilização do atributo 'placeholder'.*/
+.contact .content .contactForm form .row100 input::placeholder,
+.contact .content .contactForm form .row100 textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.contact .content .contactForm form .row100 input[type="submit"] {
+    background: var(--branco);
+    color: var(--dourado);
+    max-width: 100px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+/*Estilização da 'div' que contém os ícones de mídias sociais*/
+.contact .content .sci {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+/*Estilização da lista das mídias sociais*/
+.contact .content .sci ul {
+    display: flex;
+}
+
+/*Estilização dos itens da lista das mídias sociais*/
+.contact .content .sci ul li {
+    list-style: none;
+}
+
+.contact .content .sci ul li a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 30px;
+}
+
+/*Estilização das imagens das mídias sociais*/
+.contact .content .sci ul li a img {
+    filter: invert(1);
+    max-width: 40px;
+}
+
+.contact .content .sci ul li a:hover img {
+    opacity: 0.7;
+}
+
+.contact .content .copyright {
+    color: var(--branco);
+    text-transform: capitalize;
+}
+
+.contact .content .copyright a {
+    color: var(--branco);
+}
+
+/*----------ESTILIZAÇÃO DO MENU RESPONSIVO--------------*/
+
+#header .toggle {
+    display: none;
+}
+
+@media(max-width: 992px) {
+
+    /*----------CRIAÇÃO DO ÍCONE DE MENU RESPONSIVO----------*/
+
+    /*Linha 1/3*/
+    #header .toggle {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    /*Linha 2/3*/
+    #header .toggle:before {
+        content: '';
+        position: absolute;
+        top: 4px;
+        width: 100%;
+        height: 2px;
+        background: var(--dourado);
+        z-index: 1;
+        box-shadow: 0 10px 0 #936d0d;
+        transition: 0.5s;
+    }
+
+    /*Linha 3/3*/
+    #header .toggle:after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        width: 100%;
+        height: 2px;
+        background: var(--dourado);
+        z-index: 1;
+        transition: 0.5s;
+    }
+
+    /*ESTILIZAÇÃO DO HEADER E DA LOGO PARA QUE SE ADAPTEM AO ÍCONE DO MENU RESPONSIVO*/
+    header,
+    header.sticky {
+        padding: 5px 50px;
+        background: var(--branco);
+    }
+
+    header .logo {
+        color: var(--dourado);
+    }
+
+    /*----------ESTILIZAÇÃO DOS ITENS DO MENU RESPONSIVO----------*/
+
+    header ul {
+        /*Definição de cor de fundo, a ser exibida com os itens do menu responsivo*/
+        background: var(--branco);
+        position: absolute;
+        top: 40px;
+        left: 0;
+        /*Determinação para que os itens do menu responsivo e o respectivo background cubram a pagina toda.*/
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        overflow: auto;
+        /*Determinação para que, se o botão do menu não estiver ativo, os itens do menu responsivo e o respectivo background fiquem invisíveis*/
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    header ul li a {
+        color: var(--dourado);
+    }
+
+    /*----------COMPORTAMENTO DO MENU RESPONSIVO QUANDO O BOTÃO ESTIVER ACIONADO----------*/
+
+    header.active ul {
+        /*Determinação para que, quando o botão estiver ativo, o menu responsivo se torne visível*/
+        visibility: visible;
+        opacity: 1;
+        /*Determinação para que os itens do menu fiquem um embaixo do outro*/
+        display: block;
+        padding-top: 20px;
+    }
+
+    header.active ul li a {
+        display: inline-block;
+        margin: 10px 0;
+        font-size: 20px;
+    }
+
+    /*----------ESTILIZAÇÃO DA CAPA DO NOSSO SITE PARA DEIXAR RESPONSIVO----------*/
+
+    .banner {
+        background-position: center;
+    }
+
+    .banner h2 {
+        font-size: 100px;
+        padding: 0 50px;
+    }
+
+    /*------------ESTILIZAÇÃO DAS SEÇÕES PRINCIPAIS DO SITE, PARA QUE SE TORNEM RESPONSIVAS------------*/
+    .sec {
+        padding: 100px 50px 50px 50px;
+    }
+
+    /*--------------ESTILIZAÇÃO DOS CARDS DA SEÇÃO 'O QUE FAZEMOS', PARA QUE SE TORNEM RESPONSIVOS-------------- */
+
+    .sec .content .services .box {
+        width: 100%;
+    }
+
+    .stats {
+        padding-top: 250px;
+    }
+
+    /*--------------ESTILIZAÇÃO DA SEÇÃO DE 'ENVIE UMA MENSAGEM'--------------*/
+
+    .contact .content .contactForm form .row100 {
+        flex-direction: column;
+    }
+
+    .contact .content .contactForm form .row100 .inputBx50,
+    .contact .content .contactForm form .row100 .inputBx100 {
+        width: 100%;
+        margin: 0;
+    }
+
+    .contact .content .sci {
+        margin: 20px;
+    }
+
+    .contact .content .sci ul li a img {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 36px;
+    }
+
+}
